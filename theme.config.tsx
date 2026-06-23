@@ -17,7 +17,7 @@ const config: DocsThemeConfig = {
       </span>
     </>
   ),
-  i18n: undefined,
+  i18n: [],
   head: function UseHead() {
     const { title } = useConfig()
     return (
