@@ -46,11 +46,11 @@ const config: DocsThemeConfig = {
           name="og:title"
           content={title ? title + ' | Prompt Engineering Guide' : 'Prompt Engineering Guide'}
         />
-      <link rel="icon" href="/144-favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/prompt-engineering-guide/144-favicon.svg" type="image/svg+xml" />
 
         <link
           rel="icon"
-          href="/144-favicon-dark.svg"
+          href="/prompt-engineering-guide/144-favicon-dark.svg"
           type="image/svg+xml"
           media="(prefers-color-scheme: dark)"
         />
