@@ -9,10 +9,6 @@ module.exports = withNextra({
   basePath: '/prompt-engineering-guide',
   assetPrefix: '/prompt-engineering-guide/',
   images: { unoptimized: true },
-  i18n: {
-    locales: ['en', 'zh', 'jp', 'pt', 'tr', 'es', 'it', 'fr', 'kr', 'ca', 'fi', 'ru','de', 'ar'],
-    defaultLocale: 'en',
-  },
   webpack(config) {
     const allowedSvgRegex = /components\/icons\/.+\.svg$/
 

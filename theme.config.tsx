@@ -3,7 +3,6 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import { Pre } from './components/pre'
-import CopyPageDropdown from './components/CopyPageDropdown'
 
 const config: DocsThemeConfig = {
   logo: (
@@ -18,22 +17,7 @@ const config: DocsThemeConfig = {
       </span>
     </>
   ),
-  i18n: [
-    { locale: 'en', text: 'English' },
-    { locale: 'zh', text: '中文' },
-    { locale: 'jp', text: '日本語'},
-    { locale: 'pt', text: 'Português' },
-    { locale: 'it', text: 'Italian' },
-    { locale: 'tr', text: 'Türkçe' },
-    { locale: 'es', text: 'Español' },
-    { locale: 'fr', text: 'Français' },
-    { locale: 'kr', text: '한국어' },
-    { locale: `ca`, text: `Català` },
-    { locale: 'fi', text: 'Finnish' },
-    { locale: 'ru', text: 'Русский' },
-    { locale: 'de', text: 'Deutsch' },
-    { locale: 'ar', text: 'العربية' },
-  ],
+  i18n: undefined,
   head: function UseHead() {
     const { title } = useConfig()
     return (
@@ -92,7 +76,7 @@ const config: DocsThemeConfig = {
   main: ({ children }: { children: React.ReactNode }) => {
     const router = useRouter();
     // Only show on English pages (not index page)
-    const isEnglishPage = router.locale === 'en' && router.pathname !== '/';
+    const isEnglishPage = router.pathname !== '/';
 
     return (
       <>
@@ -105,7 +89,6 @@ const config: DocsThemeConfig = {
             zIndex: 10,
             maxWidth: '100%'
           }}>
-            <CopyPageDropdown />
           </div>
         )}
         {children}
