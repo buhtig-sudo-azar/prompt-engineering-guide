@@ -25,7 +25,7 @@ jobs:
           cache: npm
       - run: npm install
       - run: npm run build
-      - run: node scripts/restructure-locales.js
+      - run: echo '<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="refresh" content="0; url=/prompt-engineering-guide/index.ru"><title>Prompt Engineering Guide</title></head><body><a href="/prompt-engineering-guide/index.ru">Русская версия</a></body></html>' > out/index.html
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
