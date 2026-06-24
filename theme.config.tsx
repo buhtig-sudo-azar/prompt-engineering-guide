@@ -5,6 +5,44 @@ import { useRouter } from 'next/router'
 import { Pre } from './components/pre'
 import CopyPageDropdown from './components/CopyPageDropdown'
 
+const localeList = ['ar', 'ca', 'de', 'en', 'es', 'fi', 'fr', 'it', 'jp', 'kr', 'pt', 'ru', 'tr', 'zh'];
+
+function ServicesButton() {
+  const router = useRouter();
+  const seg = router.asPath.split('/').filter(Boolean);
+  const locale = localeList.includes(seg[0]) ? seg[0] : 'ru';
+  return (
+    <a
+      href={`/prompt-engineering-guide/${locale}/services`}
+      style={{
+        padding: '6px 16px',
+        backgroundColor: '#8b5cf6',
+        color: 'white',
+        borderRadius: '6px',
+        fontWeight: 600,
+        textDecoration: 'none',
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '4px',
+        transition: 'all 0.2s ease',
+        border: 'none',
+        cursor: 'pointer',
+        whiteSpace: 'nowrap',
+      }}
+      onMouseOver={(e) => {
+        e.currentTarget.style.backgroundColor = '#7c3aed'
+        e.currentTarget.style.transform = 'scale(1.05)'
+      }}
+      onMouseOut={(e) => {
+        e.currentTarget.style.backgroundColor = '#8b5cf6'
+        e.currentTarget.style.transform = 'scale(1)'
+      }}
+    >
+      ✨ Services
+    </a>
+  );
+}
+
 const config: DocsThemeConfig = {
   logo: (
     <>
@@ -114,36 +152,7 @@ const config: DocsThemeConfig = {
     ) as React.ReactElement;
   },
   navbar: {
-    extraContent: (
-      <a
-        href="/services"
-        style={{
-          padding: '6px 16px',
-          backgroundColor: '#8b5cf6',
-          color: 'white',
-          borderRadius: '6px',
-          fontWeight: 600,
-          textDecoration: 'none',
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '4px',
-          transition: 'all 0.2s ease',
-          border: 'none',
-          cursor: 'pointer',
-          whiteSpace: 'nowrap',
-        }}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#7c3aed'
-          e.currentTarget.style.transform = 'scale(1.05)'
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = '#8b5cf6'
-          e.currentTarget.style.transform = 'scale(1)'
-        }}
-      >
-        ✨ Services
-      </a>
-    )
+    extraContent: <ServicesButton />
   },
 }
 
