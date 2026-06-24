@@ -28,3 +28,4 @@ prompts
 #mcp
 .mcp.json
 .env.local
+.vercel

@@ -82,13 +82,14 @@ const config: DocsThemeConfig = {
           content={title ? title + ' | Prompt Engineering Guide' : 'Prompt Engineering Guide'}
         />
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
-        <link
-          rel="icon"
-          href="/favicon-dark.svg"
-          type="image/svg+xml"
-          media="(prefers-color-scheme: dark)"
-        />
+      <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/favicon.svg" />
+      <link
+        rel="icon"
+        href="/favicon-dark.svg"
+        type="image/svg+xml"
+        media="(prefers-color-scheme: dark)"
+      />
     </>
   )},
   project: {
